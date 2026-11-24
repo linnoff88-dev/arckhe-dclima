@@ -45,7 +45,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
     <>
       {/* Logo */}
       <a
-        href="https://inema.club"
+        href="https://ARCKHÉ AI"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-16 items-center gap-2 px-6 hover:opacity-80 transition-opacity"
@@ -53,7 +53,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <CloudSun className="h-6 w-6 text-primary" />
         <div className="flex flex-col">
           <span className="text-lg font-bold text-primary">DClima</span>
-          <span className="text-xs text-muted-foreground">INEMA.CLUB</span>
+          <span className="text-xs text-muted-foreground">ARCKHÉ AI</span>
         </div>
       </a>
 
