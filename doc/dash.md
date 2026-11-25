@@ -257,53 +257,53 @@ List specific interaction improvements.
 Explain how each change increases trust.
 Do not add new features — only refine interaction clarity, feedback, and consistency.
 O ChatGPT disse:
-Tradução para português (PT-BR):
+Traduçêo para português (PT-BR):
 
 Dashboards de UI Impressionantes
-💡 Inspiração
+💡 Inspiraçêo
 
 (links mantidos)
 
 💡 Metaprompt
 Objetivo:
-Construir um aplicativo web de dashboard de dados pronto para produção, em nível sênior, que seja calmo, claro e rápido. Esta é uma interface de ferramenta, não uma página de marketing.
+Construir um aplicativo web de dashboard de dados pronto para produçêo, em nível sênior, que seja calmo, claro e rápido. Esta é uma interface de ferramenta, nêo uma página de marketing.
 
-Stack Tecnológica Obrigatória (Opinião definida)
+Stack Tecnológica Obrigatória (Opiniêo definida)
 Use esta stack, salvo impossibilidade:
 
 Framework: Next.js 16 (App Router) + React 19 + TypeScript
 (Aproveitando o React Compiler estável).
 
-Orquestração de IA: Vercel AI SDK
+Orquestraçêo de IA: Vercel AI SDK
 (Essencial para streaming de respostas de LLM, chamadas de ferramentas e gerenciamento de estados de UI com IA).
 
-Estilização: Tailwind CSS v4.0
+Estilizaçêo: Tailwind CSS v4.0
 (Usando o motor de alta performance Oxide e container queries nativas).
 
 Sistema de Componentes: shadcn/ui (Radix UI Primitives).
 
-Camada de Dados: TanStack Query v5 (sincronização no cliente) + use cache do Next.js (cache no servidor).
+Camada de Dados: TanStack Query v5 (sincronizaçêo no cliente) + use cache do Next.js (cache no servidor).
 
 Data Grid: TanStack Table v8
 (Para logs complexos, listas de usuários e analytics).
 
-Validação & Formulários: Zod + React Hook Form
-(Validação unificada para inputs do cliente e Server Actions).
+Validaçêo & Formulários: Zod + React Hook Form
+(Validaçêo unificada para inputs do cliente e Server Actions).
 
 Banco de Dados / ORM: Drizzle ORM
 (Mais leve e mais “Edge-ready” que Prisma para ambientes serverless em 2025).
 
-Autenticação: Clerk ou Auth.js v5
-(Clerk para implantação rápida de RBAC; Auth.js para controle self-hosted).
+Autenticaçêo: Clerk ou Auth.js v5
+(Clerk para implantaçêo rápida de RBAC; Auth.js para controle self-hosted).
 
 Segurança: OWASP Top 10 (2025) + Rate Limiting
 (via Upstash/Redis para endpoints de IA).
 
 Integraremos a fonte de dados a partir do Supabase.
 
-Requisitos de Arquitetura da Aplicação
+Requisitos de Arquitetura da Aplicaçêo
 Use uma única fonte de verdade para dados (API/banco).
-A UI deve ler do cache de queries, não de estados aleatórios de componentes.
+A UI deve ler do cache de queries, nêo de estados aleatórios de componentes.
 
 Separe claramente:
 
@@ -321,20 +321,20 @@ boundaries de loading/erro por rota
 
 componentes de servidor para dados iniciais quando apropriado e componentes de cliente para interatividade.
 
-Frameworks de Design a Aplicar (Não negociável)
-Arquitetura da Informação (IA): Organizar por objetivos/decisões do usuário, não por funcionalidades.
+Frameworks de Design a Aplicar (Nêo negociável)
+Arquitetura da Informaçêo (IA): Organizar por objetivos/decisões do usuário, nêo por funcionalidades.
 
-Redução de Carga Cognitiva: Reduzir ruído visual; facilitar a leitura rápida.
+Reduçêo de Carga Cognitiva: Reduzir ruído visual; facilitar a leitura rápida.
 
-Divulgação Progressiva: A visão padrão é simples; controles avançados aparecem apenas quando necessários.
+Divulgaçêo Progressiva: A visêo padrêo é simples; controles avançados aparecem apenas quando necessários.
 
-Performance Percebida: A UI deve parecer instantânea usando atualizações otimistas, skeletons e interações não bloqueantes.
+Performance Percebida: A UI deve parecer instantânea usando atualizações otimistas, skeletons e interações nêo bloqueantes.
 
 Especificações de UI/UX (Nível Sênior)
 1) Layout & Hierarquia
 Grid rigoroso; escala de espaçamento consistente.
 
-Conteúdo principal domina; navegação visualmente discreta.
+Conteúdo principal domina; navegaçêo visualmente discreta.
 
 Sem logos/banners exagerados. Isto é uma ferramenta.
 
@@ -349,7 +349,7 @@ verde: sucesso
 
 Contraste deve ser legível. Nunca usar cor como único indicador.
 
-3) Navegação
+3) Navegaçêo
 Sidebar esquerda persistente:
 
 links agrupados
@@ -363,11 +363,11 @@ Barra superior apenas para ações globais da página + busca global (opcional).
 4) Tabelas (Utilidade Central do Dashboard)
 Usar recursos do TanStack Table:
 
-busca + filtros + ordenação
+busca + filtros + ordenaçêo
 
-paginação (cliente ou servidor)
+paginaçêo (cliente ou servidor)
 
-seleção de linhas com ações em massa (seleção revela barra contextual)
+seleçêo de linhas com ações em massa (seleçêo revela barra contextual)
 
 visibilidade de colunas + colunas responsivas
 
@@ -386,8 +386,8 @@ ECharts se o dataset for grande ou com atualizações de alta frequência
 
 Preferir clareza funcional a visuais chamativos.
 
-6) Padrões de Interação (Baseados em Radix)
-Popover: ações pequenas e não bloqueantes (opções de exibição, filtros rápidos).
+6) Padrões de Interaçêo (Baseados em Radix)
+Popover: ações pequenas e nêo bloqueantes (opções de exibiçêo, filtros rápidos).
 
 Dialog/Modal: fluxos complexos ou bloqueantes (criar/editar item).
 
@@ -395,12 +395,12 @@ Toasts: notificações de sucesso/erro/aviso.
 
 UI Otimista para mutações comuns:
 
-atualização imediata da UI, rollback em falha
+atualizaçêo imediata da UI, rollback em falha
 
 usar updates otimistas do TanStack Query ou useOptimistic do React.
 
 7) Estados & Confiança (Devem ser projetados)
-Para cada região/componente de dados, implementar:
+Para cada regiêo/componente de dados, implementar:
 
 Loading: skeletons
 
@@ -408,7 +408,7 @@ Estado vazio: CTA claro
 
 Erro: recuperável, com retry
 
-Confirmação de sucesso: toasts
+Confirmaçêo de sucesso: toasts
 
 O usuário nunca deve se perguntar: “isso funcionou?”
 
@@ -419,20 +419,20 @@ Entidades de dados (ex.: Usuários, Projetos, Links, Eventos, Métricas)
 
 Quais endpoints alimentam quais cards/tabelas/gráficos
 
-Estratégia de atualização:
+Estratégia de atualizaçêo:
 
 polling vs websocket vs refresh manual
 
 Regras de cache:
 
-stale time, refetch ao focar, invalidação em mutações (TanStack Query)
+stale time, refetch ao focar, invalidaçêo em mutações (TanStack Query)
 
 Segurança & Padrões de “App Responsável”
-Enforce RBAC/permissões no servidor (não apenas esconder na UI).
+Enforce RBAC/permissões no servidor (nêo apenas esconder na UI).
 
 Validar todas as entradas com Zod no servidor.
 
-Não expor segredos ao cliente.
+Nêo expor segredos ao cliente.
 
 Adicionar hooks básicos de auditoria para ações-chave (criar/atualizar/deletar).
 
@@ -443,17 +443,17 @@ Scaffold funcional de dashboard em Next.js:
 
 rotas, layout, sidebar, ações no topo
 
-Página “Visão Geral do Dashboard” com:
+Página “Visêo Geral do Dashboard” com:
 
 cards de KPI
 
-tabela com filtro/ordenação/seleção + ações em massa
+tabela com filtro/ordenaçêo/seleçêo + ações em massa
 
 gráfico de linha + gráfico de barras
 
 Fluxo Criar/Editar:
 
-formulário em modal com validação + toast + update otimista
+formulário em modal com validaçêo + toast + update otimista
 
 Estados totalmente implementados: loading/vazio/erro
 
@@ -464,19 +464,19 @@ Compreensível em < 10 segundos
 
 Calmo, profissional, orientado a dados
 
-Navegação acessível por teclado (Radix ajuda)
+Navegaçêo acessível por teclado (Radix ajuda)
 
-Interações com sensação de rapidez (updates otimistas + bom UX de loading)
+Interações com sensaçêo de rapidez (updates otimistas + bom UX de loading)
 
-💡 Foco de UI, Navegação
-Você é um designer de produto sênior revisando e melhorando a UI de uma aplicação existente.
-Seu objetivo é fortalecer hierarquia, foco e navegação para que o design “desapareça” e os dados sejam o protagonista.
+💡 Foco de UI, Navegaçêo
+Você é um designer de produto sênior revisando e melhorando a UI de uma aplicaçêo existente.
+Seu objetivo é fortalecer hierarquia, foco e navegaçêo para que o design “desapareça” e os dados sejam o protagonista.
 
 Princípio central
-A UI deve apontar para os dados, não competir com eles.
+A UI deve apontar para os dados, nêo competir com eles.
 
 1. Foco primário
-Identifique o insight ou decisão mais importante suportada por esta tela.
+Identifique o insight ou decisêo mais importante suportada por esta tela.
 
 Torne esse elemento visualmente dominante à primeira vista.
 
@@ -487,15 +487,15 @@ Revisar todas as sidebars (esquerda, direita, colapsável, contextual).
 
 Validar o propósito de cada uma:
 
-navegação global, navegação local, utilidades ou contexto?
+navegaçêo global, navegaçêo local, utilidades ou contexto?
 
-Se o propósito for pouco claro, recomendar remoção ou consolidação.
+Se o propósito for pouco claro, recomendar remoçêo ou consolidaçêo.
 
 Reduzir peso visual:
 
 menor contraste, tipografia mais leve, ícones discretos.
 
-Sidebars devem emoldurar o conteúdo, não competir com ele.
+Sidebars devem emoldurar o conteúdo, nêo competir com ele.
 
 Avaliar prioridade dos itens:
 
@@ -503,20 +503,20 @@ remover itens raros ou redundantes
 
 agrupar ações relacionadas e reforçar hierarquia
 
-Destacar localização atual de forma sutil.
+Destacar localizaçêo atual de forma sutil.
 
 Avaliar visibilidade vs ruído:
 
 se algo precisa estar sempre visível, justificar
 
-caso contrário, usar divulgação progressiva ou colapso.
+caso contrário, usar divulgaçêo progressiva ou colapso.
 
-3. Disciplina de navegação
-Separar claramente navegação global da navegação local da página.
+3. Disciplina de navegaçêo
+Separar claramente navegaçêo global da navegaçêo local da página.
 
-Evitar que a navegação roube atenção dos dados.
+Evitar que a navegaçêo roube atençêo dos dados.
 
-Navegação serve para orientar, não para vender ou decorar.
+Navegaçêo serve para orientar, nêo para vender ou decorar.
 
 4. Cor & foco
 Usar paleta base neutra na maior parte da UI.
@@ -525,8 +525,8 @@ Aplicar cores de acento com parcimônia para reforçar hierarquia ou foco ativo.
 
 Reservar cores de sistema (sucesso, aviso, erro) somente para feedback de estado.
 
-5. Contenção visual
-Identificar elementos decorativos que não melhoram a compreensão.
+5. Contençêo visual
+Identificar elementos decorativos que nêo melhoram a compreensêo.
 
 Desenfatizar informações secundárias via escala, contraste e espaçamento.
 
@@ -539,21 +539,21 @@ o que é mais importante
 
 onde olhar
 
-qual ação ou insight vem a seguir
+qual açêo ou insight vem a seguir
 
 Dinâmica & Confiança
-Você é um designer de produto sênior e engenheiro de UX revisando uma aplicação existente.
-Seu objetivo é aumentar a confiança do usuário por meio de clareza de interação, feedback e confiabilidade do sistema.
+Você é um designer de produto sênior e engenheiro de UX revisando uma aplicaçêo existente.
+Seu objetivo é aumentar a confiança do usuário por meio de clareza de interaçêo, feedback e confiabilidade do sistema.
 
 Princípio central
-Confiança é construída com intenção clara, feedback imediato e comportamento consistente.
+Confiança é construída com intençêo clara, feedback imediato e comportamento consistente.
 
-1. Intenção de interação
-Para cada elemento interativo (filtros, ordenação, ações em massa, botões):
+1. Intençêo de interaçêo
+Para cada elemento interativo (filtros, ordenaçêo, ações em massa, botões):
 
-Identificar a intenção do usuário antes da ação.
+Identificar a intençêo do usuário antes da açêo.
 
-Garantir que a interação comunique:
+Garantir que a interaçêo comunique:
 
 o que vai acontecer
 
@@ -563,12 +563,12 @@ se pode ser desfeito
 
 Sinalizar ações ambíguas, surpreendentes ou irreversíveis sem aviso.
 
-2. Filtros, ordenação & ações em massa
-Filtros e ordenação devem:
+2. Filtros, ordenaçêo & ações em massa
+Filtros e ordenaçêo devem:
 
-indicar claramente quando estão ativos
+indicar claramente quando estêo ativos
 
-mostrar quais dados são afetados
+mostrar quais dados sêo afetados
 
 atualizar resultados de forma rápida e previsível
 
@@ -580,12 +580,12 @@ prevenir ações destrutivas acidentais
 
 fornecer feedback claro de sucesso ou falha
 
-3. Modais vs popovers (intenção importa)
+3. Modais vs popovers (intençêo importa)
 Modais: decisões bloqueantes, ações destrutivas, tarefas multi-etapas ou de alto comprometimento.
 
 Popovers/UI inline: edições rápidas, prévias, ações de baixo risco.
 
-Identificar usos incorretos onde a interrupção é pesada demais ou leve demais.
+Identificar usos incorretos onde a interrupçêo é pesada demais ou leve demais.
 
 4. Feedback & estados do sistema
 Estados de loading:
@@ -598,7 +598,7 @@ Toasts/notificações:
 
 concisos e informativos
 
-confirmar resultados, não apenas ações
+confirmar resultados, nêo apenas ações
 
 evitar excesso ou empilhamento
 
@@ -628,7 +628,7 @@ comportamentos inconsistentes para ações similares
 estados de UI que parecem “incertos” ou instáveis
 
 6. Teste de confiança
-Após qualquer interação, o usuário deve sentir:
+Após qualquer interaçêo, o usuário deve sentir:
 
 “O sistema me entendeu”
 
@@ -646,20 +646,20 @@ O ChatGPT disse:
 Resumo do assunto e da finalidade
 
 Assunto:
-Projeto, arquitetura e revisão de um dashboard web de dados em nível sênior, com foco em UI/UX, performance, confiabilidade e boas práticas modernas de frontend (Next.js, React, TanStack, Tailwind, Radix, etc.).
+Projeto, arquitetura e revisêo de um dashboard web de dados em nível sênior, com foco em UI/UX, performance, confiabilidade e boas práticas modernas de frontend (Next.js, React, TanStack, Tailwind, Radix, etc.).
 
 Finalidade:
-Orientar a construção e avaliação de um dashboard profissional, claro e funcional, onde:
+Orientar a construçêo e avaliaçêo de um dashboard profissional, claro e funcional, onde:
 
-Os dados são o elemento principal, não o design decorativo.
+Os dados sêo o elemento principal, nêo o design decorativo.
 
 A interface é calma, previsível e rápida, reduzindo carga cognitiva.
 
-A navegação é discreta, bem hierarquizada e orientada a decisões do usuário.
+A navegaçêo é discreta, bem hierarquizada e orientada a decisões do usuário.
 
 As interações geram confiança, com feedback imediato, estados bem definidos e comportamento consistente.
 
-A aplicação segue padrões de produção, segurança e escalabilidade, pronta para uso real.
+A aplicaçêo segue padrões de produçêo, segurança e escalabilidade, pronta para uso real.
 
 Em resumo:
 👉 Criar e revisar um dashboard que “desaparece” visualmente para que o usuário entenda rapidamente o que importa, confie no sistema e tome decisões com eficiência.
@@ -667,22 +667,22 @@ Em resumo:
 Você disse:
 qual um padrao ou prompt 
 O ChatGPT disse:
-Aqui está um padrão de prompt claro, reutilizável e profissional, alinhado ao conteúdo que você trouxe. Ele pode ser usado com IA (design, frontend ou produto) para criar, revisar ou melhorar dashboards.
+Aqui está um padrêo de prompt claro, reutilizável e profissional, alinhado ao conteúdo que você trouxe. Ele pode ser usado com IA (design, frontend ou produto) para criar, revisar ou melhorar dashboards.
 
-Prompt padrão — Dashboard de Dados (Nível Sênior)
+Prompt padrêo — Dashboard de Dados (Nível Sênior)
 Você é um engenheiro de frontend e designer de produto sênior.
 
-Sua tarefa é projetar ou revisar um dashboard web de dados pronto para produção, com foco em clareza, hierarquia, performance e confiança do usuário.
+Sua tarefa é projetar ou revisar um dashboard web de dados pronto para produçêo, com foco em clareza, hierarquia, performance e confiança do usuário.
 
 Objetivo principal
-Criar uma interface onde os dados são o protagonista, a navegação é discreta e o usuário entende o que importa e o que fazer em poucos segundos.
+Criar uma interface onde os dados sêo o protagonista, a navegaçêo é discreta e o usuário entende o que importa e o que fazer em poucos segundos.
 
 Princípios obrigatórios
-Interface de ferramenta, não marketing
+Interface de ferramenta, nêo marketing
 
-Redução de carga cognitiva
+Reduçêo de carga cognitiva
 
-Divulgação progressiva
+Divulgaçêo progressiva
 
 Feedback claro e imediato
 
@@ -697,12 +697,12 @@ Paleta neutra + um único acento para ações primárias
 
 Estados bem definidos: loading, vazio, erro e sucesso
 
-Tabelas com busca, filtros, ordenação, seleção e ações em massa
+Tabelas com busca, filtros, ordenaçêo, seleçêo e ações em massa
 
 Gráficos funcionais (linha e barra), sempre com eixos, rótulos e valores
 
 Interações e confiança
-Toda ação deve deixar claro:
+Toda açêo deve deixar claro:
 
 o que vai acontecer
 
@@ -723,7 +723,7 @@ Separar estado de servidor, UI e formulários
 
 Usar cache e atualizações otimistas
 
-Garantir validação, permissões e tratamento seguro de erros
+Garantir validaçêo, permissões e tratamento seguro de erros
 
 Resultado esperado
 Entendimento em menos de 10 segundos
@@ -732,13 +732,13 @@ Interface calma, profissional e orientada a decisões
 
 Usuário sente que o sistema é rápido, confiável e consistente
 
-Não adicione elementos decorativos desnecessários.
+Nêo adicione elementos decorativos desnecessários.
 Priorize clareza, foco e utilidade.
 
-Versão curta (para uso rápido)
+Versêo curta (para uso rápido)
 Revise ou crie um dashboard de dados como um produto profissional:
-poucos focos visuais, dados em destaque, navegação discreta, feedback imediato e interações previsíveis.
-O usuário deve entender rapidamente o que importa e qual decisão tomar.
+poucos focos visuais, dados em destaque, navegaçêo discreta, feedback imediato e interações previsíveis.
+O usuário deve entender rapidamente o que importa e qual decisêo tomar.
 
 Se quiser, posso:
 
@@ -746,7 +746,7 @@ adaptar esse prompt para Figma
 
 adaptar para frontend (Next.js/React)
 
-criar uma versão checklist de revisão
+criar uma versêo checklist de revisêo
 
 criar um prompt ultra-curto (1 parágrafo) para uso diário
 
@@ -755,15 +755,15 @@ me da  o promprt sem negrito e em um box
 O ChatGPT disse:
 Você é um engenheiro de frontend e designer de produto sênior.
 
-Sua tarefa é projetar ou revisar um dashboard web de dados pronto para produção, com foco em clareza, hierarquia, performance e confiança do usuário.
+Sua tarefa é projetar ou revisar um dashboard web de dados pronto para produçêo, com foco em clareza, hierarquia, performance e confiança do usuário.
 
 Objetivo principal:
-Criar uma interface onde os dados são o protagonista, a navegação é discreta e o usuário entende o que importa e o que fazer em poucos segundos.
+Criar uma interface onde os dados sêo o protagonista, a navegaçêo é discreta e o usuário entende o que importa e o que fazer em poucos segundos.
 
 Princípios obrigatórios:
-- Interface de ferramenta, não marketing
-- Redução de carga cognitiva
-- Divulgação progressiva
+- Interface de ferramenta, nêo marketing
+- Reduçêo de carga cognitiva
+- Divulgaçêo progressiva
 - Feedback claro e imediato
 - Comportamento previsível e consistente
 
@@ -772,11 +772,11 @@ Requisitos de UI/UX:
 - Sidebar persistente, visualmente leve, sem competir com o conteúdo
 - Paleta neutra com um único acento para ações primárias
 - Estados bem definidos: loading, vazio, erro e sucesso
-- Tabelas com busca, filtros, ordenação, seleção e ações em massa
+- Tabelas com busca, filtros, ordenaçêo, seleçêo e ações em massa
 - Gráficos funcionais (linha e barra) com eixos, rótulos e valores
 
 Interações e confiança:
-- Toda ação deve comunicar:
+- Toda açêo deve comunicar:
   - o que vai acontecer
   - quando acontece
   - se pode ser desfeita
@@ -787,14 +787,14 @@ Interações e confiança:
 Arquitetura (se aplicável):
 - Separar estado de servidor, estado de UI e estado de formulários
 - Usar cache e atualizações otimistas
-- Garantir validação, permissões e tratamento seguro de erros
+- Garantir validaçêo, permissões e tratamento seguro de erros
 
 Resultado esperado:
 - Entendimento em menos de 10 segundos
 - Interface calma, profissional e orientada a decisões
 - Usuário confia no sistema e sente consistência nas interações
 
-Não adicione elementos decorativos desnecessários.
+Nêo adicione elementos decorativos desnecessários.
 Priorize clareza, foco e utilidade.
 Você disse:
 quais seriam os passo a passo  seja direto mas completo
@@ -802,7 +802,7 @@ O ChatGPT disse:
 Abaixo está um passo a passo direto, completo e prático, do zero até a entrega de um dashboard profissional.
 
 1) Definir o objetivo da tela
-- Qual decisão o usuário precisa tomar aqui?
+- Qual decisêo o usuário precisa tomar aqui?
 - Qual é o insight mais importante?
 - Defina UM foco principal por tela.
 
@@ -811,7 +811,7 @@ Abaixo está um passo a passo direto, completo e prático, do zero até a entreg
 - Defina de onde cada dado vem (API, banco, Supabase).
 - Decida quais dados alimentam cards, tabelas e gráficos.
 
-3) Desenhar a hierarquia da informação
+3) Desenhar a hierarquia da informaçêo
 - O dado mais importante vem primeiro e maior.
 - Secundários vêm abaixo ou com menos contraste.
 - Nada compete visualmente com o foco principal.
@@ -831,15 +831,15 @@ Abaixo está um passo a passo direto, completo e prático, do zero até a entreg
 6) Planejar estados da interface
 Para cada bloco de dados:
 - Loading (skeleton)
-- Vazio (explicação + CTA)
+- Vazio (explicaçêo + CTA)
 - Erro (mensagem clara + retry)
 - Sucesso (toast)
 
 7) Implementar tabelas corretamente
-- Busca, filtros e ordenação claros.
-- Indicar quando filtros estão ativos.
-- Seleção de linhas com ações em massa.
-- Confirmação para ações destrutivas.
+- Busca, filtros e ordenaçêo claros.
+- Indicar quando filtros estêo ativos.
+- Seleçêo de linhas com ações em massa.
+- Confirmaçêo para ações destrutivas.
 
 8) Implementar gráficos funcionais
 - Apenas linha ou barra.
@@ -847,10 +847,10 @@ Para cada bloco de dados:
 - Usar tooltip para detalhes.
 - Gráfico existe para responder uma pergunta clara.
 
-9) Definir padrões de interação
+9) Definir padrões de interaçêo
 - Popover para ações rápidas.
 - Modal apenas para ações críticas ou longas.
-- Toda ação deve deixar claro:
+- Toda açêo deve deixar claro:
   - o que acontece
   - quando acontece
   - se pode desfazer
@@ -867,15 +867,15 @@ Para cada bloco de dados:
 - Formulários: React Hook Form.
 - Nunca misturar responsabilidades.
 
-12) Aplicar segurança e validação
+12) Aplicar segurança e validaçêo
 - Validar tudo no servidor.
 - Aplicar permissões (RBAC).
-- Não confiar apenas na UI.
+- Nêo confiar apenas na UI.
 - Tratar erros de forma segura.
 
 13) Revisar foco e ruído visual
-- Remover tudo que não ajuda a decisão.
-- Sidebar não compete com conteúdo.
+- Remover tudo que nêo ajuda a decisêo.
+- Sidebar nêo compete com conteúdo.
 - Um foco visual por tela.
 
 14) Teste final de qualidade
@@ -891,11 +891,11 @@ Entrega final:
 - Experiência rápida e confiável
 Se quiser, posso transformar isso em:
 
-checklist de revisão
+checklist de revisêo
 
 fluxo visual (design → dev)
 
-versão ultra-resumida (1 página)
+versêo ultra-resumida (1 página)
 
 guia específico para Figma ou Next.js
 
@@ -905,8 +905,8 @@ O ChatGPT disse:
 Claro — vou explicar cada passo, de forma objetiva, mas com o contexto necessário para você aplicar.
 
 1) Definir o objetivo da tela
-Você precisa responder: “qual decisão essa tela ajuda a tomar?”
-Ex.: “Quais pedidos estão atrasados?”, “Como está a receita do mês?”, “Quais usuários estão com problema?”.
+Você precisa responder: “qual decisêo essa tela ajuda a tomar?”
+Ex.: “Quais pedidos estêo atrasados?”, “Como está a receita do mês?”, “Quais usuários estêo com problema?”.
 Isso evita um dashboard “cheio de coisa” sem foco.
 
 2) Mapear dados e entidades
@@ -917,20 +917,20 @@ Entidades: usuários, pedidos, projetos, eventos, métricas…
 Métricas: total, média, crescimento, % erro…
 Depois, defina onde cada dado vem (Supabase/API) e com que frequência muda.
 
-3) Desenhar a hierarquia da informação
+3) Desenhar a hierarquia da informaçêo
 Organize o que aparece primeiro e o que é secundário:
 
 Topo: insight principal (ex.: KPIs + tendência)
 
-Meio: lista de ação (tabela do que precisa atenção)
+Meio: lista de açêo (tabela do que precisa atençêo)
 
 Rodapé: contexto (gráficos/segmentações)
 A regra é: o que decide vem antes.
 
 4) Definir layout base
-Escolha uma estrutura que não muda:
+Escolha uma estrutura que nêo muda:
 
-Sidebar fixa (navegação)
+Sidebar fixa (navegaçêo)
 
 Top bar discreta (ações globais)
 
@@ -940,14 +940,14 @@ Isso dá consistência e reduz esforço mental do usuário.
 5) Criar sistema visual mínimo
 Você define “regras visuais” para o produto inteiro:
 
-Paleta neutra + 1 cor de acento (para ação principal)
+Paleta neutra + 1 cor de acento (para açêo principal)
 
 Vermelho só para erro/destrutivo; verde só para sucesso
 
 Tipografia simples (títulos, corpo, rótulos)
 
 Espaçamento consistente
-Objetivo: parecer ferramenta séria e legível, não arte.
+Objetivo: parecer ferramenta séria e legível, nêo arte.
 
 6) Planejar estados da interface
 Todo componente de dados precisa mostrar claramente o que está acontecendo:
@@ -956,7 +956,7 @@ Loading: skeleton (o usuário entende que está carregando)
 
 Vazio: explica por que está vazio + CTA (ex.: “criar item”)
 
-Erro: mensagem clara + botão “tentar novamente”
+Erro: mensagem clara + botêo “tentar novamente”
 
 Sucesso: toast confirmando resultado
 Isso gera confiança e evita “travou?” / “foi?”.
@@ -966,31 +966,31 @@ Tabela é onde o trabalho acontece. Ela deve permitir:
 
 Buscar, filtrar e ordenar
 
-Mostrar quando filtros estão ativos
+Mostrar quando filtros estêo ativos
 
-Paginar sem confusão
+Paginar sem confusêo
 
 Selecionar linhas e habilitar ações em massa
 
-Em ações destrutivas: confirmar escopo (quantos itens) + confirmação
+Em ações destrutivas: confirmar escopo (quantos itens) + confirmaçêo
 Regra: tabela tem que ser controlável e previsível.
 
 8) Implementar gráficos funcionais
-Gráfico não é decoração: ele responde uma pergunta.
+Gráfico nêo é decoraçêo: ele responde uma pergunta.
 
-Linha: evolução no tempo
+Linha: evoluçêo no tempo
 
-Barra: comparação por categoria
+Barra: comparaçêo por categoria
 Sempre com eixos, labels, valores e tooltip.
-Se não ajuda decisão, remover.
+Se nêo ajuda decisêo, remover.
 
-9) Definir padrões de interação
-Padrão evita dúvida:
+9) Definir padrões de interaçêo
+Padrêo evita dúvida:
 
 Popover: ajustes rápidos (filtro curto, colunas)
 
 Modal: criar/editar (fluxo mais longo) ou destrutivo
-Cada ação precisa deixar explícito:
+Cada açêo precisa deixar explícito:
 
 o que vai acontecer
 
@@ -1011,21 +1011,21 @@ Confiança vem de: consistência + feedback.
 11) Organizar arquitetura de estado
 Separar responsabilidades evita bugs e “UI louca”:
 
-Estado de servidor: TanStack Query (cache, refetch, invalidação)
+Estado de servidor: TanStack Query (cache, refetch, invalidaçêo)
 
 Estado de UI: local (sidebar aberta, aba selecionada)
 
 Estado de form: React Hook Form + Zod
-Regra: não duplicar dados em state local se já existe na query.
+Regra: nêo duplicar dados em state local se já existe na query.
 
-12) Aplicar segurança e validação
-Não confie no front:
+12) Aplicar segurança e validaçêo
+Nêo confie no front:
 
 Validar entradas no servidor (Zod)
 
 Aplicar permissões (RBAC) no backend
 
-Não expor segredos no client
+Nêo expor segredos no client
 
 Erros sem vazar dados sensíveis
 Isso evita falhas e dá robustez real.
@@ -1051,9 +1051,9 @@ Em 10 segundos: dá para saber o que fazer?
 
 Existe loading/vazio/erro em tudo?
 
-A navegação orienta sem distrair?
+A navegaçêo orienta sem distrair?
 
-Ações críticas têm confirmação e feedback?
+Ações críticas têm confirmaçêo e feedback?
 
 Se você me disser qual é o seu dashboard (tema e dados) — ex.: financeiro, RH, estoque, projetos — eu adapto esse passo a passo para um roteiro específico da sua tela, com estrutura de páginas, KPIs, tabela principal e gráficos recomendados.
 
@@ -1063,14 +1063,14 @@ O ChatGPT disse:
 Perfeito. Para algo simples e rápido, eu posso te ajudar assim — usando todas as informações acima, sem burocracia, e aproveitando diretamente os links de exemplo.
 
 Como eu posso te ajudar de forma simples e rápida
-1) Traduzir inspiração em decisões práticas
+1) Traduzir inspiraçêo em decisões práticas
 A partir dos links do Dribbble que você trouxe, eu faço:
 
 Leitura visual dos padrões que se repetem
 
-Identificação do que é estrutura boa vs decoração
+Identificaçêo do que é estrutura boa vs decoraçêo
 
-Extração de padrões reutilizáveis:
+Extraçêo de padrões reutilizáveis:
 
 layout
 
@@ -1079,9 +1079,9 @@ hierarquia
 uso de tabelas, cards e gráficos
 
 Resultado:
-→ você não copia telas, copia decisões de design.
+→ você nêo copia telas, copia decisões de design.
 
-2) Definir um layout padrão em minutos
+2) Definir um layout padrêo em minutos
 Com base nos exemplos:
 
 Sidebar esquerda leve (como dashboards SaaS)
@@ -1092,7 +1092,7 @@ Topo limpo, sem banner
 
 Cards de KPI simples
 
-Uma tabela principal como “coração” da tela
+Uma tabela principal como “coraçêo” da tela
 
 Eu posso te entregar:
 
@@ -1111,7 +1111,7 @@ KPI cards (3–5 no máximo)
 
 Isso já resolve 80% dos dashboards vistos nos links.
 
-4) Definir padrões de interação prontos
+4) Definir padrões de interaçêo prontos
 Eu já aplico as regras:
 
 Popover para filtros
@@ -1122,7 +1122,7 @@ Toast para feedback
 
 Skeleton automático no loading
 
-Você não decide isso toda hora — vira padrão.
+Você nêo decide isso toda hora — vira padrêo.
 
 5) Gerar um prompt pronto para IA (design ou código)
 Você pode colar e usar direto:
@@ -1177,7 +1177,7 @@ apontar o que remover
 
 indicar onde está o foco errado
 
-simplificar navegação
+simplificar navegaçêo
 
 alinhar com os princípios acima
 
@@ -1186,7 +1186,7 @@ Para algo simples e rápido, eu atuo como:
 
 filtro de ruído
 
-tradutor de inspiração em regra prática
+tradutor de inspiraçêo em regra prática
 
 atalho entre “bonito” e “funciona”
 
@@ -1216,7 +1216,7 @@ Vai mudar nas próximas horas?
 
 Existe algum risco (chuva, calor, frio, vento)?
 
-Decisão suportada:
+Decisêo suportada:
 
 Planejar atividades, operações ou alertas com base no clima.
 
@@ -1232,7 +1232,7 @@ Hourly Forecast
 
 Daily Forecast
 
-3) Estrutura da aplicação (simples)
+3) Estrutura da aplicaçêo (simples)
 Páginas:
 
 Dashboard (principal)
@@ -1246,9 +1246,9 @@ Ordem visual (de cima para baixo):
 
 KPIs principais (agora)
 
-Gráfico de previsão
+Gráfico de previsêo
 
-Tabela de previsão detalhada
+Tabela de previsêo detalhada
 
 Sidebar esquerda:
 
@@ -1269,13 +1269,13 @@ Cards no topo (4 a 5 no máximo):
 
 Temperatura atual (°C)
 
-Sensação térmica (°C)
+Sensaçêo térmica (°C)
 
 Umidade (%)
 
 Velocidade do vento (km/h)
 
-Condição atual (sol, nublado, chuva)
+Condiçêo atual (sol, nublado, chuva)
 
 Regra visual:
 
@@ -1285,7 +1285,7 @@ Pouca cor
 
 Ícones simples (clima)
 
-6) Gráfico (previsão clara)
+6) Gráfico (previsêo clara)
 Tipo:
 
 Gráfico de linha
@@ -1315,7 +1315,7 @@ Hora
 
 Temperatura
 
-Sensação térmica
+Sensaçêo térmica
 
 Chuva (mm)
 
@@ -1327,7 +1327,7 @@ Funcionalidades:
 
 Filtro por período (6h, 12h, 24h)
 
-Ordenação por temperatura ou chuva
+Ordenaçêo por temperatura ou chuva
 
 Destaque sutil para condições extremas
 
@@ -1338,22 +1338,22 @@ Skeleton nos cards, gráfico e tabela
 
 Erro:
 
-Mensagem clara: “Não foi possível atualizar o clima”
+Mensagem clara: “Nêo foi possível atualizar o clima”
 
-Botão “Tentar novamente”
+Botêo “Tentar novamente”
 
 Vazio:
 
 Estado inicial pedindo para escolher local
 
-Atualização:
+Atualizaçêo:
 
 Toast: “Clima atualizado há X minutos”
 
 9) Interações (simples)
 Trocar local: dropdown no topo
 
-Atualizar dados: botão discreto
+Atualizar dados: botêo discreto
 
 Detalhes rápidos: popover ao clicar em uma linha da tabela
 
@@ -1376,12 +1376,12 @@ Você pode colar isso direto:
 Crie um dashboard de monitoramento do clima usando dados da Open-Meteo.
 
 Objetivo:
-Permitir que o usuário entenda rapidamente o clima atual, a previsão nas próximas horas e possíveis riscos climáticos.
+Permitir que o usuário entenda rapidamente o clima atual, a previsêo nas próximas horas e possíveis riscos climáticos.
 
 Estrutura:
 - Sidebar esquerda discreta
-- KPIs no topo (temperatura, sensação térmica, umidade, vento)
-- Gráfico de linha com previsão de temperatura 24h
+- KPIs no topo (temperatura, sensaçêo térmica, umidade, vento)
+- Gráfico de linha com previsêo de temperatura 24h
 - Tabela detalhada por hora
 
 Requisitos:
@@ -1389,7 +1389,7 @@ Requisitos:
 - Dados como foco principal
 - Estados claros de loading, erro e vazio
 - Interações simples e previsíveis
-- Gráficos funcionais, sem decoração
+- Gráficos funcionais, sem decoraçêo
 
 Evite:
 - Elementos decorativos
@@ -1416,6 +1416,6 @@ montar a chamada exata da Open-Meteo (URL + params)
 
 adaptar para mobile
 
-ou transformar isso em um checklist de implementação
+ou transformar isso em um checklist de implementaçêo
 
 É só dizer qual você quer.
